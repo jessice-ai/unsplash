@@ -8,7 +8,7 @@ from selenium import webdriver
 class SunSpiderSpider(scrapy.Spider):
     name = 'sun_spider'
     allowed_domains = ['unsplash.com']
-    start_urls = ['https://api.unsplash.com/search/photos/?client_id=NMf8MYtmGZfrsrogzyg4nmP9h3vjaW0Ouz7_KOnemfo&query=love&page=2&per_page=100&order_by=latest']
+    start_urls = ['https://api.unsplash.com/search/photos/?client_id=NMf8MYtmGZfrsrogzyg4nmP9h3vjaW0Ouz7_KOnemfo&query=arrow&page=8&per_page=100&order_by=latest']
     headers = {
         'User-Agent': UserAgent().chrome,
         "Content-Type": "application/json",
