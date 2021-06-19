@@ -11,12 +11,9 @@ git clone https://github.com/jessice-ai/unsplash.git
 #### Python独立环境构建
 
 ```
-
-
 1、pip install virtualenv #安装
 2、virtualenv venv --python=python3.9 #指定版本
 3、source venv/Scripts/activate #进入环境
-
 ```
 
 安装Scrapy
