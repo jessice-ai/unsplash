@@ -6,6 +6,7 @@ Unsplash api python down free images
 
 ```
 git clone https://github.com/jessice-ai/unsplash.git
+cd unsplash
 ```
 
 #### Python独立环境构建
@@ -33,6 +34,13 @@ pip install scrapy
 
 ```
 pip install fake-useragent
+```
+
+#### 参数修改
+
+```
+1、sun_spider.py #爬虫文件
+2、https://api.unsplash.com/search/photos/?client_id=NMf8MYtmGZfrsrogzyg4nmP9h3vjaW0Ouz7_KOnemfo&query=arrow&page=8&per_page=100&order_by=latest #修改对应参数即可
 ```
 
 #### 运行项目
