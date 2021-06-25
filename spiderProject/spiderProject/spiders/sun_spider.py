@@ -20,14 +20,9 @@ class SunSpiderSpider(scrapy.Spider):
     writer = ""
     field_order = ["Filename", 'Description', 'Keywords', 'Categories', 'Mature content', 'Editorial']
     allowed_domains = ['unsplash.com']
-    keyword = "Valentine\'s Day"
+    keyword = "love"
     start_urls = [
-        "https://api.unsplash.com/search/photos/?client_id=NMf8MYtmGZfrsrogzyg4nmP9h3vjaW0Ouz7_KOnemfo&query=" + keyword + "&page=1&per_page=20&order_by=latest",
-        # "https://api.unsplash.com/search/photos/?client_id=NMf8MYtmGZfrsrogzyg4nmP9h3vjaW0Ouz7_KOnemfo&query=" + keyword + "&page=2&per_page=20&order_by=latest",
-        # "https://api.unsplash.com/search/photos/?client_id=NMf8MYtmGZfrsrogzyg4nmP9h3vjaW0Ouz7_KOnemfo&query=" + keyword + "&page=3&per_page=20&order_by=latest",
-        # "https://api.unsplash.com/search/photos/?client_id=NMf8MYtmGZfrsrogzyg4nmP9h3vjaW0Ouz7_KOnemfo&query=" + keyword + "&page=4&per_page=20&order_by=latest",
-        # "https://api.unsplash.com/search/photos/?client_id=NMf8MYtmGZfrsrogzyg4nmP9h3vjaW0Ouz7_KOnemfo&query=" + keyword + "&page=5&per_page=20&order_by=latest",
-        # "https://api.unsplash.com/search/photos/?client_id=NMf8MYtmGZfrsrogzyg4nmP9h3vjaW0Ouz7_KOnemfo&query=" + keyword + "&page=6&per_page=20&order_by=latest",
+        "https://api.unsplash.com/search/photos?client_id=NMf8MYtmGZfrsrogzyg4nmP9h3vjaW0Ouz7_KOnemfo&query="+keyword+"&page=1&per_page=30&order_by=latest"
     ]
     headers = {
         'User-Agent': UserAgent().chrome,
@@ -87,7 +82,7 @@ class SunSpiderSpider(scrapy.Spider):
         i = 1
         for item in dict1['results']:
             arr = []
-            print(item)
+            # print(item)
             # print(item["id"]) #ID
             # print(item["alt_description"]) #描述
             tag_str = tag_str_sign = ""
@@ -119,8 +114,8 @@ class SunSpiderSpider(scrapy.Spider):
                 self.sun_write = True
 
             # 自动模拟浏览器下载
-            # browser = webdriver.Chrome()
-            # browser.get(url)
+            browser = webdriver.Chrome()
+            browser.get(url)
             # 追加内容到CSV文件
             write_csv(arr)
             i += 1
