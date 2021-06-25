@@ -14,15 +14,19 @@ def write_csv(arr):
 
 
 class SunSpiderSpider(scrapy.Spider):
-
     name = 'sun_spider'
     sun_write = False
     writer = ""
     field_order = ["Filename", 'Description', 'Keywords', 'Categories', 'Mature content', 'Editorial']
     allowed_domains = ['unsplash.com']
-    keyword = "love"
+    keyword = "Summer"
     start_urls = [
-        "https://api.unsplash.com/search/photos?client_id=NMf8MYtmGZfrsrogzyg4nmP9h3vjaW0Ouz7_KOnemfo&query="+keyword+"&page=1&per_page=30&order_by=latest"
+        "https://api.unsplash.com/search/photos?client_id=NMf8MYtmGZfrsrogzyg4nmP9h3vjaW0Ouz7_KOnemfo&query=" + keyword + "&page=1&per_page=30&order_by=latest",
+        "https://api.unsplash.com/search/photos?client_id=NMf8MYtmGZfrsrogzyg4nmP9h3vjaW0Ouz7_KOnemfo&query=" + keyword + "&page=2&per_page=30&order_by=latest",
+        "https://api.unsplash.com/search/photos?client_id=NMf8MYtmGZfrsrogzyg4nmP9h3vjaW0Ouz7_KOnemfo&query=" + keyword + "&page=3&per_page=30&order_by=latest",
+        "https://api.unsplash.com/search/photos?client_id=NMf8MYtmGZfrsrogzyg4nmP9h3vjaW0Ouz7_KOnemfo&query=" + keyword + "&page=4&per_page=30&order_by=latest",
+        "https://api.unsplash.com/search/photos?client_id=NMf8MYtmGZfrsrogzyg4nmP9h3vjaW0Ouz7_KOnemfo&query=" + keyword + "&page=5&per_page=30&order_by=latest"
+
     ]
     headers = {
         'User-Agent': UserAgent().chrome,
@@ -102,6 +106,7 @@ class SunSpiderSpider(scrapy.Spider):
             name = item.get('user').get('name')
             name = name.replace(" ", '-')
             url = t_url + '&dl=' + alt_description + '.jpg'
+            tag_str = tag_str + ',' + alt_description.replace(" ", ",")
             arr.append(alt_description + '.jpg')
             arr.append(alt_description)
             arr.append(tag_str)
