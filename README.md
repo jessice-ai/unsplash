@@ -27,7 +27,7 @@ pip install scrapy
 
 ```
 1、pip install selenium #添加插件
-2、https://chromedriver.storage.googleapis.com/91.0.4472.19/chromedriver_win32.zip #解压目录加入环境变量
+2、https://chromedriver.chromium.org/downloads #选择合适版本,解压目录加入环境变量
 
 注意: chromedriver 版本要与 安装 chrome 浏览器版本匹配
 
