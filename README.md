@@ -28,6 +28,21 @@ pip install scrapy
 ```
 1、pip install selenium #添加插件
 2、https://chromedriver.storage.googleapis.com/91.0.4472.19/chromedriver_win32.zip #解压目录加入环境变量
+
+注意: chromedriver 版本要与 安装 chrome 浏览器版本匹配
+
+问题: 如果出现不匹配问题,比如 ( selenium.common.exceptions.SessionNotCreatedException: Message: session not created: This version of ChromeDriver only supports Chrome version 91 )
+解决:
+方式1: chromedriver 版本与 安装 chrome 浏览器版本一致
+
+方式2: 使用 webdriver-manager 管理版本(目前使用的方式)
+from selenium import webdriver
+from webdriver_manager.chrome import ChromeDriverManager
+
+browser = webdriver.Chrome(ChromeDriverManager(version="93.0.4577.15").install()) #指定版本,
+browser.get(url)
+
+
 ```
 
 #### 虚拟代理
