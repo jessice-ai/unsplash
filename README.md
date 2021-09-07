@@ -31,7 +31,8 @@ pip install scrapy
 
 注意: chromedriver 版本要与 安装 chrome 浏览器版本匹配
 
-问题: 如果出现不匹配问题,比如 ( selenium.common.exceptions.SessionNotCreatedException: Message: session not created: This version of ChromeDriver only supports Chrome version 91 )
+问题: 如果出现不匹配问题
+
 解决:
 方式1: chromedriver 版本与 安装 chrome 浏览器版本一致
 
